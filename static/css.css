@@ -1,0 +1,230 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {margin: 0; padding: 0;}
+body, textarea, input, button, select, keygen, legend{font:14px "Microsoft YaHei", Verdana, "宋体", sans-serif; font-weight: normal; color: #666666; outline: 0;}
+header, footer, section, article, aside, nav, address, figure, figcaption, menu, details {display:block;}
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+table {border-collapse: collapse; border-spacing: 0;}
+caption, th {text-align:left;font-weight: normal;}
+html, body, fieldset, img, iframe, abbr{border: 0;}
+i, cite, em, var, address, dfn{font-style: normal;}
+summary{outline: 0;}
+ul, li{list-style: none;}
+img {vertical-align: middle;}
+a, a:hover{text-decoration: none; cursor: pointer;}
+a:link {color: #666666;}
+a:visited {color: #666666;}
+a:hover {color: #C91618;}
+a:active {color: #666666;}
+/*轮播图样式*/
+#footer {
+	text-align:center;
+}
+.fullSlide {
+	width:100%;
+	position:relative;
+	height:630px;
+	background:#000;
+}
+.fullSlide .bd {
+	margin:0 auto;
+	position:relative;
+	z-index:0;
+	overflow:hidden;
+}
+.fullSlide .bd ul {
+	width:100% !important;
+}
+.fullSlide .bd li {
+	width:100% !important;
+	height:630px;
+	overflow:hidden;
+	text-align:center;
+}
+.fullSlide .bd li a {
+	display:block;
+	height:630px;
+}
+.fullSlide .hd {
+	width:100%;
+	position:absolute;
+	z-index:1;
+	bottom:0;
+	left:0;
+	height:30px;
+	line-height:30px;
+}
+.fullSlide .hd ul {
+	text-align:center;
+}
+.fullSlide .hd ul li {
+	cursor:pointer;
+	display:inline-block;
+	*display:inline;
+	zoom:1;
+	width:42px;
+	height:11px;
+	margin:1px;
+	overflow:hidden;
+	background:#000;
+	filter:alpha(opacity=50);
+	opacity:0.5;
+	line-height:999px;
+}
+.fullSlide .hd ul .on {
+	background:#f00;
+}
+.fullSlide .prev,.fullSlide .next {
+	display:block;
+	position:absolute;
+	z-index:1;
+	top:50%;
+	margin-top:-30px;
+	left:15%;
+	z-index:1;
+	width:40px;
+	height:60px;
+	background:url(images/slider-arrow.png) -126px -137px #000 no-repeat;
+	cursor:pointer;
+	filter:alpha(opacity=50);
+	opacity:0.5;
+	display:none;
+}
+.fullSlide .next {
+	left:auto;
+	right:15%;
+	background-position:-6px -137px;
+}
+/*轮播图样式结束*/
+
+.header{
+	width:100%; height:28px; background:#076bb4;
+}
+
+.nav{
+	width:100%; 
+	height:84px; 
+	background:#fff;
+}
+
+.zhong{ 
+	position:absolute;
+	border:1px #FF0000 solid; 
+	height:2800px; 
+	width:1015px;left:50%; 
+	margin-left:-507px;
+}
+.zhong p{
+	color:#FFF; 
+	line-height:28px; 
+	float:right; 
+	font-size:12px;
+}
+.nav1{
+	width:1015px; 
+	height:81px; 
+	float:left;
+}
+.nav1 img{
+	width:76px; 
+	height:83px; 
+	float:left;
+}
+.nav1 ul{
+	float:right;
+	margin-top:30px;
+}
+.nav1 li{
+	float:left;
+	margin-left:52px; 
+	font-size:14px; 
+	font-weight:bold; 
+	color:#000;
+}
+
+.nav2{
+	margin-top:793px;
+}
+
+.img1{
+	float:left;
+}
+
+.img2{ 
+	float:left;
+	margin-left:22px;
+}
+
+.img3{
+	float:left;
+	margin-left:22px;
+}
+
+.img4{
+	float:right;
+}
+
+.new-logo{ float:left;
+	margin-top:48px;
+}
+
+.new{
+	width:1015px;
+	height:310px;
+	float:left;
+	margin-top:21px;
+}
+
+.new-content{
+	 float:right;
+
+	 width:567px;
+	 margin-top:-14px;
+}
+
+.new-content dl dt{
+	font-size:14px;
+	font-weight:bold;
+
+}
+.new-content dl{
+	font-size:12px;
+	margin-top:14px;
+}
+
+.new-content dl dd{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.about{
+	background:url(images/lyw_28.jpg);
+	margin-top:682px;
+	 height:397px;
+	 background-repeat:no-repeat;
+	 background-position:center center;
+}
+
+.jqfg{
+	float:left;
+	margin-top:529px;
+	font-size:20px;
+	border:1px #000000 solid;
+	margin-left:460px;
+}
+
+.jqfg2{
+	float:left;
+	font-size:20px;
+	margin-top:575px;
+	border:1px #000000 solid;
+	
+
+
+
+
+
+
+
+	

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% csrf_token %}
+添加成功,您的用户名为{{ c.username }}
+年纪 :{{ c.age }}
+密码:{{ c.password }}
+</body>
+</html>

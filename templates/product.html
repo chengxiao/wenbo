@@ -1,0 +1,89 @@
+{% extends 'header.html' %}
+{% block title %}{{ product.title }}{% endblock %}
+
+
+
+
+{% block content %}
+    <div id="container">
+    {% include 'sidebar.html' %}
+
+    	<div class="main">
+
+		<?php include(TEMPLATEPATH .'/breadcrumb.php');?>
+
+		<?php if (have_posts()) : ?>
+
+		<?php while (have_posts()) : the_post(); ?>
+
+		<div class="post" id="post-111">
+
+			<h2>{{ product.title }}</h2>
+
+
+
+			<div class="products-post">
+
+				<div class="products-img">
+
+                    <img src="/media/{{ product.imgage }}"/>
+
+				</div>
+
+				<div class="products-meta">
+
+					<ul>
+
+						<li>产品分类：{{ product.cate }}</li>
+
+						<li>产品标签：<?php the_tags('',',',''); ?></li>
+
+						<li>发布日期：{{ product.pub_time }}</li>
+
+					</ul>
+
+				</div>
+
+			</div>
+
+			<?php } else { ?>
+
+
+
+			<div class="entry" id="entry">
+
+				{{ product.content|safe }}
+
+			</div>
+
+			<div class="pn">
+
+
+
+				<div class="previous"><?php if (get_next_post($categoryIDS)) { next_post_link('上一个: %link','%title',true);} else { echo "上一个：没有了，已是最新的";} ?></div>
+
+				<div class="next"><?php if (get_previous_post($categoryIDS)) { previous_post_link('下一个: %link','%title',true);} else { echo "下一个：没有了，已是最后的";} ?></div>
+
+			</div>
+
+
+
+
+
+	</div>
+        </div></div>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+{% block footer %}
+
+    {% include 'footer.html' %}
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% include 'header.html' %}
+<div id="container">
+
+	<div class="container">
+
+		<div class="news">
+
+			<h3><span>企业动态</span><em><a href="{% url 'catelist' 1 %}" target="_blank"></a></em></h3>
+
+			<ul>
+
+                {% for new in news %}
+				<li><a href="{% url 'newsdetail' new.id %}" target="_blank">{{ new.title }}</a></li>
+                {% endfor %}
+
+
+			</ul>
+
+		</div>
+
+		<div class="products">
+
+			<h3><span>最新产品</span><em><a href="'.stripslashes(get_option('leonhere_products_a')).'" target="_blank"></a></em></h3>
+
+			<div class="banner_index">
+
+			<ul class="banner_wrap" id="banner_index">
+                {% for pro in pros %}
+				<li>
+
+					<div class="pic">
+
+						<a href="" target="_blank"><img src="/media/{{ pro.imgage }}"/></a>
+
+					</div>
+
+					<div class="info">
+
+						<h2><a href="{% url 'prodetail' pro.id %}" target="_blank">{{ pro.title }}</a></h2>
+
+						<p><b>产品分类：</b>{{ pro.cate }}</p>
+
+					<p><b>产品标签：</b></p>
+
+						<p><b>发布日期：{{ pro.pub_time|date:'Y年m月d日' }}</b></p>
+
+					</div>
+
+				</li>
+
+			{% endfor %}
+
+			</ul>
+
+			</div>
+
+			<a href="javascript:void(0);" class="btn btnPre" id="banner_index_pre"></a>
+
+			<a href="javascript:void(0);" class="btn btnNext" id="banner_index_next"></a>
+
+		</div>
+
+		<div class="company">
+
+			<h3><span>公司简介</span><em><?php if(get_option('leonhere_info_a')){ echo '<a href="'.stripslashes(get_option('leonhere_info_a')).'" target="_blank"></a>';}?></em></h3>
+
+			<p>
+
+				{{ system.description }}
+
+			</p>
+
+		</div>
+
+	</div>
+
+</div>
+
+{% include 'footer.html' %}

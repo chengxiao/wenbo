@@ -1,0 +1,82 @@
+
+
+<div id="container">
+
+	<div class="container">
+
+		<div class="news">
+
+			<h3><span>企业动态</span><em><?php if(get_option('leonhere_trends_a')){ echo '<a href="'.stripslashes(get_option('leonhere_trends_a')).'" target="_blank"></a>';}?></em></h3>
+
+			<ul>
+
+			
+
+				<li><a href="<?php the_permalink(); ?>" target="_blank"><?php the_title();?></a></li>
+
+			
+
+			</ul>
+
+		</div>
+
+		<div class="products">
+
+			<h3><span>最新产品</span><em><?php if(get_option('leonhere_products_a')){ echo '<a href="'.stripslashes(get_option('leonhere_products_a')).'" target="_blank"></a>';}?></em></h3>
+
+			<div class="banner_index">
+
+			<ul class="banner_wrap" id="banner_index">			
+
+			<?php if(get_option('leonhere_products')){$products = get_option('leonhere_products');}else {$products = '1';} $posts = get_posts("numberposts=5&category=".$products); if($posts) : foreach( $posts as $post ) : setup_postdata( $post );?>
+
+				<li>
+
+					<div class="pic">
+
+						<a href="<?php the_permalink(); ?>" target="_blank"><?php if((function_exists('has_post_thumbnail')) && (has_post_thumbnail())){the_post_thumbnail('other-thumbnail');}else {?><img src="<?php bloginfo('template_url'); ?>/images/no-image.jpg"/></a><?php } ?>
+
+					</div>
+
+					<div class="info">
+
+						<h2><a href="<?php the_permalink(); ?>" target="_blank"><?php the_title();?></a></h2>
+
+						<p><b>产品分类：</b><?php the_category(' &bull; '); ?></p>
+
+						<p><b>产品标签：</b><?php the_tags('',',',''); ?></p>
+
+						<p><b>发布日期：</b><?php the_time('Y-n-j'); ?></p>
+
+					</div>
+
+				</li>
+
+			
+
+			</ul>
+
+			</div>
+
+			<a href="javascript:void(0);" class="btn btnPre" id="banner_index_pre"></a>
+
+			<a href="javascript:void(0);" class="btn btnNext" id="banner_index_next"></a>
+
+		</div>
+
+		<div class="company">
+
+			<h3><span>公司简介</span><em><?php if(get_option('leonhere_info_a')){ echo '<a href="'.stripslashes(get_option('leonhere_info_a')).'" target="_blank"></a>';}?></em></h3>
+
+			<p>
+
+				<?php if(get_option('leonhere_info')) { echo get_option('leonhere_info');}?>
+
+			</p>
+
+		</div>
+
+	</div>	
+
+</div>
+

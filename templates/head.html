@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load staticfiles %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{% block title %} {% endblock %}龙峪湾官方网站</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css.css' %}" />
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/superslide.2.1.js"></script>
+</head>
+
+<body>
+    <div class="zhong">
+    	<p>欢迎来到龙峪湾官方网站</p>
+
+    	<div class="nav1">
+        	<img src="/static/images/lyw_03.jpg" />
+        	<ul>
+            	<li>网站首页</li>
+                <li>景区概括</li>
+                <li>新闻资讯</li>
+                <li>景区风光</li>
+                <li>景点介绍</li>
+                <li>旅游攻略</li>
+                <li>地图导航</li>
+                <li>在线预订</li>
+            </ul>
+        </div>
+
+        <div class="nav2">
+        	<img class="img1" src="/static/images/lyw_08.jpg" />
+            <img class="img2" src="/static/images/lyw_10.jpg" />
+            <img class="img3" src="/static/images/lyw_12.jpg" />
+            <img class="img4" src="/static/images/lyw_14.jpg" />
+        </div>
+
+        <div class="new-logo">
+        	<img src="/static/images/lyw_21.jpg" />
+        </div>
+
+        <div class="new">
+        	<img src="/static/images/lyw_25.jpg" />
+            <div class="new-content">
+                <dl style="border-bottom:#999 dashed 1px;">
+                    <dt><a href="#">龙峪湾景区优美的自然景观</a></dt>
+                    <dd>2017-3-9</dd>
+                    <dd>龙峪湾景区优美的自然景观龙峪湾景区优美的自然景观龙峪湾景区优美的自然景观龙峪湾景区优美的自然景观
+                    龙峪湾景区优美的自然景观龙峪湾景区优美的自然景观龙峪湾景区优美的</dd>
+                </dl>
+
+                <dl style="border-bottom:#999 dashed 1px;">
+                    <dt><a href="#">龙峪湾景区优美的自然景观</a></dt>
+                    <dd>2017-3-9</dd>
+                    <dd>龙峪湾景区优美的自然景观龙峪湾景区优美的自然景观龙峪湾景区优美的自然景观龙峪湾景区优美的自然景观
+                    龙峪湾景区优美的自然景观龙峪湾景区优美的自然景观龙峪湾景区优美的</dd>
+                </dl>
+
+                <dl>
+                    <dt><a href="#">龙峪湾景区优美的自然景观</a></dt>
+                    <dd>2017-3-9</dd>
+                    <dd>龙峪湾景区优美的自然景观龙峪湾景区优美的自然景观龙峪湾景区优美的自然景观龙峪湾景区优美的自然景观
+                    龙峪湾景区优美的自然景观龙峪湾景区优美的自然景观龙峪湾景区优美的</dd>
+                </dl>
+             </div>
+        </div>
+		<div class="jqfg">景区风光</div><br />
+        <div class="jqfg2">scenic introduction</div>
+
+
+
+    </div>
+
+
+
+	<div class="header">
+    </div>
+
+    <div class="nav">
+    </div>
+	<div class="fullSlide">
+  <div class="bd">
+    <ul>
+      <li _src="url(/static/images/lyw_05.jpg)" style="background:#E2025E center 0 no-repeat;"><a target="_blank" href="http://sc.chinaz.com"></a></li>
+      <li _src="url(/static/images/2.jpg)" style="background:#DED5A1 center 0 no-repeat;"><a target="_blank" href="http://sc.chinaz.com"></a></li>
+      <li _src="url(/static/images/3.jpg)" style="background:#B8CED1 center 0 no-repeat;"><a target="_blank" href="http://sc.chinaz.com"></a></li>
+      <li _src="url(/static/images/4.jpg)" style="background:#98918E center 0 no-repeat;"><a target="_blank" href="http://sc.chinaz.com"></a></li>
+      <li _src="url(/static/images/5.jpg)" style="background:#FEFF19 center 0 no-repeat;"><a target="_blank" href="http://sc.chinaz.com"></a></li>
+    </ul>
+  </div>
+  <div class="hd">
+    <ul>
+    </ul>
+  </div>
+  <span class="prev"></span> <span class="next"></span> </div>
+<script type="text/javascript">
+jQuery(".fullSlide").hover(function() {
+    jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+},
+function() {
+    jQuery(this).find(".prev,.next").fadeOut()
+});
+jQuery(".fullSlide").slide({
+    titCell: ".hd ul",
+    mainCell: ".bd ul",
+    effect: "fold",
+    autoPlay: true,
+    autoPage: true,
+    trigger: "click",
+    startFun: function(i) {
+        var curLi = jQuery(".fullSlide .bd li").eq(i);
+        if ( !! curLi.attr("_src")) {
+            curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+        }
+    }
+});
+</script>
+<div style="text-align:center;clear:both">
+</div>
+
+<div class="about">
+</div>
+
+
+
+</body>
+</html>

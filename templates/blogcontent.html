@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>{{ blog.title }}</h1>
+
+<p>属于:{% for a in cate %}
+    <a href="/cate/{{ a.id }}">{{ a.title }}/</a>
+{% endfor %}</p>
+
+<p>{{ blog.content|safe }}</p>
+
+
+<br>
+<p></p>
+
+</body>
+</html>

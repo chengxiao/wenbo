@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/dtd/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<title>{% block title %}首页{% endblock %}-{{ system.sitename }}</title>
+
+
+<link rel="stylesheet" type="text/css" href="/static/style.css" media="screen" />
+
+<link rel="shortcut icon"  href="/static/images/favicon.ico" type="image/x-icon"/>
+
+<script type="text/javascript" src="/static/javascript/jQuery.js"></script>
+
+<script type="text/javascript" src="/static/javascript/leonhere.js"></script>
+
+
+<script type="text/javascript" src="/static/javascript/common.js"></script>
+
+
+</head>
+
+<body>
+
+<div id="header">
+
+	<div class="head">
+
+		<div class="logo" style="background:url(/media/{{ system.logo }}) no-repeat;">
+
+			<h1><a href="http://{{ system.url }}">logo</a></h1>
+
+		</div>		
+
+		<ul class="menus"></ul>
+
+	
+
+		<div class="menu">
+
+			<ul class="menus">
+
+	        {% for nav in nav %}
+                <li><a href="{{ nav.url }}">{{ nav.title }}</a></li>
+            {% endfor %}
+			</ul>
+
+		</div>
+
+			
+
+	</div>	
+
+</div>
+{% block banner %}
+
+<div id="banner">
+	<div class="slider">
+
+		<img src="/static/images/banner.jpg"/>
+
+	</div>
+    {% endblock %}
+
+</div>
+
+{% block content %}{% endblock %}
+
+{% block footer %}{% endblock %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to my blog</title>
+</head>
+<body>
+<p>欢迎来到我的blog</p>
+<p>
+<ul>
+    {% for n in nav %}
+    <li><a href='{{ n.url }}'>{{ n.title }}</a> </li>
+    {% endfor %}
+</ul>
+</p>
+<p>
+    {% for arc in arcdic %}
+        <p><a href="{% url 'detail' arc.id %}"><h1>{{ arc.title }}</h1></a></p><p>发布时间:{{ arc.update_date }}</p>
+        <p>
+
+            {{ arc.content |slice:'200'|safe}}
+
+        </p>
+    {% endfor %}
+
+</p>
+</body>
+</html>

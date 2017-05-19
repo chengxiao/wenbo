@@ -1,0 +1,50 @@
+{% extends 'header.html' %}
+{% block title %}{{ page.title}}{% endblock %}
+
+
+
+
+{% block content %}
+    <div id="container">
+    {% include 'sidebar.html' %}
+
+
+
+<div class="main">
+
+
+
+		<div class="post">
+
+			<h2>{{ page.title }}</h2>
+
+			<div class="entry">
+
+				{{ page.content|safe}}
+
+			</div>
+
+		</div>
+
+
+
+	</div>
+
+
+
+    	</div>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+{% block footer %}
+
+    {% include 'footer.html' %}
+
+{% endblock %}

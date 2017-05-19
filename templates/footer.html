@@ -1,0 +1,24 @@
+<div id="footer">
+
+	<div class="foot">
+
+	<?php if(get_option('leonhere_footer')){ echo get_option('leonhere_footer');}else {?>
+
+		<p><?php copyrightDate();?> {{ system.sitename }}    总部地址：{{ system.address }}    电话：{{ system.tel }}  </p>
+
+		<p>网站地址：Http://{{ system.url }}  联系QQ:{{ system.qq }} 联系邮箱：{{ system.mail }}</p>
+
+
+</div>
+
+<script type="text/javascript">
+
+var ShowPre1 = new ShowPre({box:"banner_index",Pre:"banner_index_pre",Next:"banner_index_next",numIco:"index_numIco",loop:1,auto:1});
+
+</script>
+
+
+
+</body>
+
+</html>

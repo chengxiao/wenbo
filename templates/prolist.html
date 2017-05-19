@@ -1,0 +1,85 @@
+{% extends 'header.html' %}
+{% block title %}产品列表{% endblock %}
+
+
+
+
+{% block content %}
+    <div id="container">
+    {% include 'sidebar.html' %}
+    <div class="main">
+
+		<?php include(TEMPLATEPATH .'/breadcrumb.php');?>
+
+		<?php if (have_posts()) : ?>
+
+		<ul class="productlist">
+
+			<?php
+
+				if(get_option('leonhere_products_num')){
+
+					$num = get_option('leonhere_products_num');
+
+					$posts = query_posts($query_string . '&orderby=date&caller_get_posts=1&order=DESC&showposts='.$num);
+
+				}
+
+			?>
+
+			{% for pro in prolist %}
+
+			<li id="post-<?php the_ID(); ?>">
+
+				<div class="thumbnail">
+
+					<img src="/media/{{ pro.imgage }}"/>
+
+				</div>
+
+				<div class="product-info">
+
+					<h2><a href="{% url 'prodetail' pro.id %}" target="_blank">{{ pro.title }}</a></h2>
+
+					<p><b>产品分类：</b>{{ pro.cate }}</p>
+
+					<p><b>产品标签：</b></p>
+
+					<p><b>发布日期：</b>{{ pro.pub_time|date:'Y年m月d日' }}</p>
+
+				</div>
+
+			</li>
+
+			{% endfor %}
+
+		</ul>
+
+		<div class="pagenavi">
+
+			<?php boke8_net_pagenavi(6);?>
+
+		</div>
+
+
+
+
+
+	</div>
+
+    	</div>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+{% block footer %}
+
+    {% include 'footer.html' %}
+
+{% endblock %}
